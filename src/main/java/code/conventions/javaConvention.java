@@ -13,7 +13,6 @@
 package code.conventions;
 
 //improt 정보
-import java.util.*;
 
 /**
  *
@@ -52,5 +51,39 @@ public class javaConvention {
         //return은 명확하게 return에서 하위 메소드 호출 방식으로 반환은 자제
         String name = "test";
         return name.length() > 3 ? name : "test2";
+    }
+
+    //보이스카우트 원칙 : 처음에 작성된 코드보다 항상 더 나은 코드로 수정한다.
+
+    public String guardClause() {
+        //bad example
+        String name = "jhKim";
+        if (name.equals("lee")) {
+            if(name.equals("choi")) {
+                return "fail";
+            }
+        }
+
+        //guardClause
+        if(name.equals("lee")) {
+            return "fail";
+        }
+
+        if(name.equals("choi")) {
+            return "fail";
+        }
+
+        //null반환을 하지 않도록하여 null 체크 줄이기
+        //Syntax Sugar : 문법을 더욱 간결하게 사용하기
+        //짧은코드는 삼항연산자로
+        //메서드는 행동을 이름의 맨 앞에.. ex findUsers , checkUsers , doUsers 등
+        //언더바가 들어가는 스네이크케이스 user_name ,  카멜케이스 userName , 파스칼케이스 UserNmae
+        //주석이 필요한 복잡한 로직은 함수로 분리하고, 주석 대신 함수명으로 사용
+        //3줄이상이 중복되는 경우는 함수로 분리
+        //클레스와 함수에 너무 많은 기능은 자제, 많은 기능이 묶인 함수면 기능별로 함수 분리
+        //인수는 되도록 4개를 넘지 않도록
+        //복잡한 조건은 캡슐화
+
+     return "";
     }
 }
