@@ -18,7 +18,7 @@ public class StreamJava {
         System.out.println(list);
         System.out.println(sortedList);
         /**
-         * stream은 지연된 연산 즉 중간연산이 한번 호출될떄마다 바로바로 하는게 아니라 표시만하고 있다가 나중에 수행한다
+         * stream은 지연된 연산 즉 중간연산이 한번 호출될떄마다 바로바로 하는게 아니라 표시만하고 있다가 나중에 수행한다.
          * Lazy Evaluation https://dororongju.tistory.com/137 (꼭 참조)
          */
         IntStream intStream = new Random().ints(1,46); //무한 연산인데
